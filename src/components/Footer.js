@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="transition-colors duration-500 ease-in-out bg-gray-100 dark:bg-gray-800 text:black dark:text-white py-6">
+    <footer className="transition-colors duration-500 ease-in-out bg-gray-100 dark:bg-gray-900 text:black dark:text-white py-6">
       <div className="container mx-auto text-center">
         {/* Social Links */}
         <div className="mb-4">
