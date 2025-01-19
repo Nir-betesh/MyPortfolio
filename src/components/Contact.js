@@ -55,13 +55,15 @@ const Contact = () => {
           name="message"
           placeholder="Your Message"
           className="Block p-2 text-black dark:text-white bg-gray-100 dark:bg-gray-600 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto"
+          autoComplete="off"
           rows="4"
           required
-          autoComplete="off"
         ></textarea>
+
         <div className="flex justify-center">
-          <button 
-            className="Block w-40 h-12 bg-green-400 text-white border-l-rose-950 dark:text-gray-900 font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-green-400">
+          <button
+            type="submit"
+            className="Block w-40 h-12 bg-green-400 text-white dark:text-gray-900 font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-green-400">
             Send Message
           </button>
         </div>
