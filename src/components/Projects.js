@@ -50,10 +50,7 @@ const Projects = () => {
       <h2 className="Block text-center text-3xl font-bold mb-4">My Projects</h2>
       <div className="grid grid-cols-1 gap-6">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className="Block flex flex-col md:flex-row items-center md:items-start bg-white dark:bg-gray-900 p-4 border rounded-md shadow-md"
-          >
+          <div key={index} className="Block flex flex-col md:flex-row items-center md:items-start bg-white dark:bg-gray-900 p-4 border rounded-md shadow-md">
             {/* Project Info */}
             <div className="flex-1 mb-4 md:mb-0 md:pr-4">
               <h3 className="text-xl font-semibold mb-2">{project.title}</h3>

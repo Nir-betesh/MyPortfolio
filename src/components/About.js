@@ -3,10 +3,7 @@ import AnimatedText from './AnimatedText';
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="transition-colors duration-500 ease-in-out min-h-screen scroll-mt-16 p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white flex justify-center items-center"
-    >
+    <section id="about" className="transition-colors duration-500 ease-in-out min-h-screen scroll-mt-16 p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white flex justify-center items-center">
       <div className="block max-w-4xl text-center">
         <h2 className="text-4xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
             <AnimatedText text="About Me"/>

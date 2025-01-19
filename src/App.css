@@ -2,38 +2,21 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Home-background {
+  animation: fade-out linear forwards;
+  animation-timeline: view();
+  animation-range: exit -200px;
+  animation: header-background-anim;
+  animation-range: exit;
 }
 
-
-
-.filter-invert {
-  filter: invert(1) brightness(0);
+@keyframes header-backgroun-anim{
+  25% {opacity: 1;}
+  85%, 100% {opacity: 0; scale: 3;};
 }
 
-.App-header {
-
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes fade-out{
+   to { opacity: 0;}
 }
 
 .Block {

@@ -2,19 +2,17 @@ import React from 'react';
 import AnimatedText from './AnimatedText';
 const Home = () => {
   return (
-    <section id="home" className="transition-colors duration-500 ease-in-out min-h-screen relative overflow-hidden flex flex-col justify-center items-center text-white">
+    <section id="home" className="Home-background min-h-screen relative overflow-hidden flex flex-col justify-center">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className=" dark:invert absolute top-0 left-0 w-full h-full object-cover z-0"
+        className="dark:invert absolute top-0 left-0 w-full h-full object-cover z-0 Home-background"
       >
         <source src="/videos/HomeBackground.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-
-      <div className="absolute top-0 left-0 w-full h-full bg-opacity-50 z-1"></div>
 
       <div className="text-center duration-500 transition-all text-black dark:text-white z-10 ">
         <h1 className="text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
