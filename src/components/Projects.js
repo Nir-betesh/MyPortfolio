@@ -9,34 +9,55 @@ const Projects = () => {
       link: "https://github.com/Nir-betesh/SpaceShooter",
       video: "/videos/SpaceShooter.mp4",
     },
+
     {
       title: "Graphic playground",
-      description: "Developed a Graphic playground using C, and OpenGL",
+      description: "Developed a graphic playground using C and OpenGL, showcasing interactive graphics and visualizations. This project highlights creativity and programming skills in computer graphics.",
       link: "https://github.com/Nir-betesh/graphics-project",
       video: "/videos/PlayGround.mp4",
     },
+
     {
-      title: "'EKrut' Vending Machine System",
-      description:"Ekrut System is a vending machine management platform with role-based login for managers, suppliers, and more.",
+      title: "EKrut Vending Machine System",
+      description:"Ekrut System is a vending machine management platform, developed in Java, featuring role-based login for managers, suppliers, and more. The project was designed and implemented following an Agile methodology, ensuring iterative development and continuous improvement.",
       link: "https://github.com/Nir-betesh/Ekrut-Project",
       video: "/videos/ekrut_project.mp4",
     },
+
     {
       title: "Secure SMS Exchange",
-      description:
-        "Secure SMS exchange composed of Encryption & Decryption with RC6, Blind RSA signature and Diffie-Hellman key exchange",
+      description: "A Python-based implementation of secure SMS exchange, featuring RC6 encryption and decryption, Blind RSA signature, and Diffie-Hellman key exchange. This project ensures robust security for message transmission.",
       link: "https://github.com/Nir-betesh/Crypto_Project",
     },
+
     {
       title: "TodoList Web Project",
-      description:
-      "Developed a Todo List application as part of a final project in a Web Development course, utilizing React, Node.js, and TypeScript.",
+      description: "Developed a Todo List application as part of a final project in a Web Development course, utilizing React, Node.js, and TypeScript.",
       link: "https://github.com/Nir-betesh/ToDoList-project",
     },
+
     {
       title: "Portfolio Website",
-      description: "A modern personal portfolio built with React.",
+      description: "Built a personal portfolio website using React and Tailwind CSS. It showcases projects, features animations, a comment section with like/dislike functionality, and MongoDB for data management. Designed for engaging and dynamic presentation.",
       link: "https://github.com/Nir-betesh/MyPortfolio",
+    },
+
+    {
+      title: "PAM & Silhouette Algorithm Implementation With Python",
+      description: "Efficient Python implementation of PAM and Silhouette algorithms for cluster analysis. Takes a distance matrix as input and determines the optimal number of clusters. Tested with large datasets for scalability and performance.",
+      link: "https://github.com/Nir-betesh/PAM_Silhouette_py",
+    },
+
+    {
+      title: "PAM & Silhouette Algorithm Implementation With C++",
+      description: "Efficient C++ implementation of PAM and Silhouette algorithms for cluster analysis. Takes a distance matrix as input and determines the optimal number of clusters. Tested with large datasets for scalability and performance.",
+      link: "https://github.com/Nir-betesh/PAM_Silhouette_cpp",
+    },
+
+    {
+      title: "Shelter Construction Management System",
+      description: "Developed an information system for a shelter construction company using TypeScript, Svelte, SvelteKit, and Drizzle. The system manages employee roles, contracts, material inventory, and project scheduling, with features like apartment-specific tracking and role-based management. Built with Agile methodologies for optimal performance.",
+      link: "https://github.com/Nir-betesh/shelter-construction-manager",
     },
   ];
   
@@ -84,13 +105,13 @@ const Projects = () => {
               className={`transition-transform duration-300 ${index === projectIndex ? "" : "scale-75 opacity-50"}`}>
               {/* Project Info */}
               <div className="dark:bg-black bg-white min-h-[500px] w-300 flex flex-col flex-wrap justify-between p-4 border rounded shadow-xl" >
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p>{project.description}</p>
+                <h3 className="text-3xl font-semibold mb-2">{project.title}</h3>
+                <p className="text-xl">{project.description}</p>
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 mt-2 inline-block"
+                  className="text-xl text-blue-500 mt-2 inline-block"
                 >
                   View Project on GitHub
                 </a>

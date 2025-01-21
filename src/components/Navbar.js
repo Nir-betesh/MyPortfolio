@@ -1,14 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
-import QRCode from 'qrcode';
-
-const generateQRCode = async () => {
-    const url = '/public/Nir_Betesh_CV.pdf';
-    const canvas = document.getElementById('qrcode');
-    await QRCode.toCanvas(canvas, url, { width: 200 });
-};
-
-generateQRCode();
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,6 +55,7 @@ const Navbar = () => {
           <li><a href="#skills" className="hover:underline">Skills</a></li>
           <li><a href="#projects" className="hover:underline">Projects</a></li>
           <li><a href="#contact" className="hover:underline">Contact</a></li>
+          <li><a href="#comments" className="hover:underline">Comments</a></li>
         </ul>
 
         {/* Mobile Menu */}
@@ -77,6 +69,7 @@ const Navbar = () => {
             <a href="#skills" className="hover:underline" onClick={() => setIsOpen(false)}><li>Skills</li></a>
             <a href="#projects" className="hover:underline" onClick={() => setIsOpen(false)}><li>Projects</li></a>
             <a href="#contact" className="hover:underline" onClick={() => setIsOpen(false)}><li>Contact</li></a>
+            <a href="#comments" className="hover:underline" onClick={() => setIsOpen(false)}><li>comments</li></a>
           </ul>
         )}
       </div>
