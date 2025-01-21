@@ -54,7 +54,7 @@ const CommentSection = () => {
   // Pagination logic
   const indexOfLastComment = currentPage * commentsPerPage;
   const indexOfFirstComment = indexOfLastComment - commentsPerPage;
-  const currentComments = comments.slice(indexOfFirstComment, indexOfLastComment);
+  const currentComments = [...comments].reverse().slice(indexOfFirstComment, indexOfLastComment);
 
   const totalPages = Math.ceil(comments.length / commentsPerPage);
 
@@ -115,8 +115,8 @@ const CommentSection = () => {
                 key={comment._id}
                 className="bg-white dark:bg-gray-600 Block gap-1 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto"
               >
-                <p>
-                  <strong>{comment.author}:</strong>
+                <p className="text-xl">
+                  <strong className="text-2xl">{comment.author}</strong>
                   <p>{comment.content}</p>
                 </p>
                 <p>

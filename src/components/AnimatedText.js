@@ -7,23 +7,6 @@ const AnimatedText = ({ text }) => {
   // Track the mouse position
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    const letters = textRef.current.querySelectorAll('.letter');
-
-    // Initial animation
-    gsap.fromTo(
-      letters,
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.05,
-        duration: 1,
-        ease: 'power3.out',
-      }
-    );
-  }, []);
-
   // Handle mouse move over the container
   const handleMouseMove = (event) => {
     setMousePos({ x: event.clientX, y: event.clientY });
