@@ -78,7 +78,6 @@ const Projects = () => {
   };
   
   const [projectIndex, setProjectIndex] = useState(0);
-  const isVideo = (file) => file?.endsWith(".mp4");
   const settings = {
     infinite: true,
     lazyLoad: true,
@@ -124,7 +123,7 @@ const Projects = () => {
                       loop
                       controls
                       ref={(videoElement) => {
-                        if (videoElement && index != projectIndex) {
+                        if (videoElement && index !== projectIndex) {
                             videoElement.pause();
                         }
                       }}
