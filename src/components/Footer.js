@@ -25,15 +25,15 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="text-sm">&copy; {new Date().getFullYear()} Nir's Portfolio. All rights reserved.</p>
+        <p className="text-sm"> &copy; {new Date().getFullYear()} Nir's Portfolio. All rights reserved.</p>
 
         {/* Quick Navigation */}
         <div className="mt-4">
-          <a href="#home" className="mx-2 text-blue-400 hover:underline"> Home </a>
-          <a href="#about" className="mx-2 text-blue-400 hover:underline"> About </a>
-          <a href="#skills" className="mx-2 text-blue-400 hover:underline"> Skills </a>
+          <a href="#home"     className="mx-2 text-blue-400 hover:underline"> Home </a>
+          <a href="#about"    className="mx-2 text-blue-400 hover:underline"> About </a>
+          <a href="#skills"   className="mx-2 text-blue-400 hover:underline"> Skills </a>
           <a href="#projects" className="mx-2 text-blue-400 hover:underline"> Projects </a>
-          <a href="#contact" className="mx-2 text-blue-400 hover:underline"> Contact </a>
+          <a href="#contact"  className="mx-2 text-blue-400 hover:underline"> Contact </a>
         </div>
       </div>
     </footer>

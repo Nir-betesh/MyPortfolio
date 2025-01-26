@@ -23,7 +23,7 @@ const CommentSection = () => {
     };
 
     fetchComments();
-  }, []);
+  }, [BACKEND_URL]);
 
   // Handle comment submission
   const handleSubmit = async (e) => {
