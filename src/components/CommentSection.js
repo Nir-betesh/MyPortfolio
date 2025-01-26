@@ -6,7 +6,7 @@ const CommentSection = () => {
   const [content, setContent] = useState("");
   const [currentPage, setCurrentPage] = useState(1); // Current page for pagination
   const commentsPerPage = 3; // Number of comments per page
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
   useEffect(() => {
     const fetchComments = async () => {
