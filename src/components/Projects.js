@@ -96,7 +96,7 @@ const Projects = () => {
       className="space-y-40 transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
     >
       <h2 className="Block text-center text-3xl font-bold mb-4">My Projects</h2>
-      <div className="text-center Block grid grid-cols-1 gap-6">
+      <div className="Block text-center grid grid-cols-1 gap-6">
         <Slider {...settings } className="flex-col">
           {projects.map((project, index) => (
             <div

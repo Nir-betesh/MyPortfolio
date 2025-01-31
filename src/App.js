@@ -6,7 +6,6 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CommentSection from './components/CommentSection';
-
 import './App.css';
 
 function App() {
