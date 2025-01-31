@@ -58,7 +58,7 @@ const About = () => {
             <h3 className="Block text-3xl font-semibold dark:text-white glow-text dark:dark-glow-text">
                 <AnimatedText text="Hobbies"/>
             </h3>
-            <p className="Block mt-4 leading-relaxed text-left">
+            <p className="Block mt-4 leading-relaxed">
               When I’m not coding, I enjoy pool, surfing, hiking, gaming, fitness, and cooking.
             </p>
           </div>

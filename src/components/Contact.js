@@ -30,7 +30,7 @@ const Contact = () => {
       <form ref={form} onSubmit={sendEmail} className="Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
         <input
           type="text"
-          name="name"
+          name="from_name"
           placeholder="Your Name"
           autoComplete="name"
           className="Block p-2 text-black dark:text-white bg-gray-100 dark:bg-gray-600 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto"
