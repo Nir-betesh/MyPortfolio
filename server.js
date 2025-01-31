@@ -3,6 +3,7 @@ const connectDB = require('./config/db');
 const commentsRoute = require('./routes/comments'); 
 const path = require('path'); // Import the 'path' module to work with file paths
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -14,6 +15,9 @@ const startServer = async () => {
 
     // Middleware for parsing JSON
     app.use(express.json());
+
+    // Middleware for CORS (must be after app definition)
+    app.use(cors());
 
     // Routes
     app.use('/api/comments', commentsRoute);
@@ -32,7 +36,7 @@ const startServer = async () => {
     });
   } catch (error) {
     console.error('Failed to connect to the database:', error.message);
-    process.exit(1); // Exit with error
+    process.exit(1);
   }
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedText from './AnimatedText';
 const Home = () => {
   return (
-    <section id="home" className="Home-background min-h-screen relative overflow-hidden flex flex-col justify-center">
+    <section id="home" className="min-h-screen relative overflow-hidden flex flex-col justify-center">
       <video
         autoPlay
         loop
@@ -14,14 +14,14 @@ const Home = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="text-center duration-500 transition-all text-black dark:text-white z-10 ">
+      <div className="text-center duration-500 transition-all text-black dark:text-white z-10">
         <h1 className="text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Hi, I'm Nir"/>
         </h1>
         <h1 className="text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Welcome to My Website!" />
         </h1>
-        <div className="text-xl mb-6 text-center glow-text dark:dark-glow-text">
+        <div className=" text-xl mb-6 text-center glow-text dark:dark-glow-text">
           <AnimatedText text="Building seamless digital experiences, one line of code at a time."/>
         </div>
         <a href="#projects"        >

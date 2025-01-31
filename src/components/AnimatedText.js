@@ -1,24 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 
 const AnimatedText = ({ text }) => {
+
   const textRef = useRef(null);
-
-  // Track the mouse position
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  // Handle mouse move over the container
   const handleMouseMove = (event) => {
-    setMousePos({ x: event.clientX, y: event.clientY });
-
     const letters = textRef.current.querySelectorAll('.letter');
 
     letters.forEach((letter) => {
-      const rect = letter.getBoundingClientRect();
-      const dx = event.clientX - (rect.left + rect.width / 2);
-      const dy = event.clientY - (rect.top + rect.height / 2);
-      const distance = Math.sqrt(dx * dx + dy * dy);
 
+      const rect = letter.getBoundingClientRect();
+      const dx = event.clientX - ( rect.left + rect.width / 2 );
+      const dy = event.clientY - ( rect.top + rect.height / 2 );
+      const distance = Math.sqrt(dx * dx + dy * dy);
       const maxDistance = 100; // Max distance for repulsion
       const power = Math.max(0, maxDistance - distance) / maxDistance;
 

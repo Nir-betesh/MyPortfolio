@@ -2,6 +2,8 @@ import React from 'react';
 import AnimatedText from './AnimatedText';
 
 const About = () => {
+
+  const hiIm = 'Hi, I’m ';
   return (
     <section id="about" className="transition-colors duration-500 ease-in-out min-h-screen scroll-mt-16 p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white flex justify-center items-center">
       <div className="max-w-4xl text-center">
@@ -9,7 +11,7 @@ const About = () => {
             <AnimatedText text="About Me"/>
         </h2>
         <p className="Block text-lg leading-relaxed animate-fade-in opacity-90">
-            Hi, I’m 
+            {hiIm}
             <span className="font-bold dark:text-white glow-text dark:dark-glow-text">
                 Nir Betesh
             </span>, a dedicated and motivated Software Engineer with a Bachelor’s degree in Software Engineering. I have a strong foundation in programming languages, including Python, C, Java, and C#, complemented by hands-on experience with a variety of tools, technologies, and methodologies. I am passionate about pursuing a career in  
