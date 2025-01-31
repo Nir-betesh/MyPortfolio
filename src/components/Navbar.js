@@ -15,13 +15,12 @@ const Navbar = () => {
     }
   };
 
-  // הפעלת האנימציה מחדש לכל פריט Block בתוך המקטע
   const restartAnimation = (sectionId) => {
-    const blocks = document.querySelectorAll(`${sectionId} .Block`); // חיפוש כל האלמנטים עם המחלקה Block בתוך המקטע
+    const blocks = document.querySelectorAll(`${sectionId} .Block`);
     blocks.forEach((block) => {
-      block.classList.remove('Block'); // הסרת המחלקה כדי לאפס את האנימציה
-      void block.offsetWidth; // טריק לאיפוס האנימציה
-      block.classList.add('Block'); // הוספת המחלקה מחדש כדי להפעיל את האנימציה
+      block.classList.remove('Block'); 
+      void block.offsetWidth; 
+      block.classList.add('Block'); 
     });
   };
 
@@ -39,7 +38,8 @@ const Navbar = () => {
           <a href="#home">My Portfolio</a>
         </h1>
         <ThemeSwitcher />
-        {/* כפתור תפריט נייד */}
+
+        {/* Hamburger Button */}
         <button
           className="md:hidden dark:text-white focus:outline-none"
           onClick={toggleMenu}
@@ -60,7 +60,7 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* תפריט דסקטופ */}
+        {/* Desktop View */}
         <ul className="transform -translate-y-2 hidden md:flex space-x-16">
           {[
             { id: '#home', name: 'Home' },
@@ -82,7 +82,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* תפריט נייד */}
+        {/* Mobile View */}
         {isOpen && (
           <ul
             ref={menuRef}

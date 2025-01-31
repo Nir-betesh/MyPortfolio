@@ -102,15 +102,13 @@ const CommentSection = () => {
           </button>
         </div>
       </form>
-
       {/* View Comments */}
       <div
         className="text-center mt-16 grid grid-cols-1 gap-4 items-center justify-center"
         style={{ minHeight: "300px" }} // Ensures consistent height for 3 comments
       >
         <h3 className="text-3xl font-bold mb-4">Comments:</h3>
-        {currentComments.length > 0
-          ? currentComments.map((comment) => (
+        {currentComments.length > 0 ? currentComments.map((comment) => (
               <div
                 key={comment._id}
                 className="bg-white dark:bg-gray-600 Block gap-1 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto"
@@ -125,7 +123,6 @@ const CommentSection = () => {
               </div>
             ))
           : null}
-
         {/* Add placeholders if fewer than 3 comments */}
         {Array.from({ length: Math.max(0, commentsPerPage - currentComments.length) }).map(
           (_, idx) => (
@@ -136,7 +133,6 @@ const CommentSection = () => {
           )
         )}
       </div>
-
       <div className="flex justify-center mt-8 items-center">
         <button
           onClick={handlePrevPage}
@@ -147,12 +143,10 @@ const CommentSection = () => {
         >
           Prev
         </button>
-
         {/* Page Numbers */}
         <div className="flex items-center space-x-2">
           {[...Array(totalPages)].map((_, index) => {
             const page = index + 1;
-
             if (
               page === currentPage ||
               page === 1 || 

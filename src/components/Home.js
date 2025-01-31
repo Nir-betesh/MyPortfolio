@@ -21,7 +21,7 @@ const Home = () => {
         <h1 className="text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Welcome to My Website!" />
         </h1>
-        <div className=" text-xl mb-6 text-center glow-text dark:dark-glow-text">
+        <div className="text-xl mb-6 text-center glow-text dark:dark-glow-text">
           <AnimatedText text="Building seamless digital experiences, one line of code at a time."/>
         </div>
         <a href="#projects"        >

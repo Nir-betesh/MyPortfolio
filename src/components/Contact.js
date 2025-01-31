@@ -59,7 +59,6 @@ const Contact = () => {
           rows="4"
           required
         ></textarea>
-
         <div className="flex justify-center">
           <button
             type="submit"
