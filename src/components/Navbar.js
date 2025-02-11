@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
 import AnimatedText from './AnimatedText';
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
@@ -10,7 +9,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
 
   const restartAnimation = (sectionId) => {
     const blocks = document.querySelectorAll(`${sectionId} .Block`);
@@ -28,12 +26,11 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [isOpen]);
+  }, []);
 
   return (
     <nav className="transition-colors duration-500 ease-in-out transform -translate-y-1 fixed left-0 right-0 bg-gray-100 dark:bg-gray-800 text:black dark:text-white text-2xl p-4 shadow-lg rounded-lg z-50">
