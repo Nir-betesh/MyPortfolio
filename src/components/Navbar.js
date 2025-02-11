@@ -12,7 +12,6 @@ const Navbar = () => {
   };
 
 
-
   const restartAnimation = (sectionId) => {
     const blocks = document.querySelectorAll(`${sectionId} .Block`);
     blocks.forEach((block) => {
@@ -21,19 +20,20 @@ const Navbar = () => {
       block.classList.add('Block'); 
     });
   };
+  
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target) && !event.target.closest("#menu-button")) {
+      setIsOpen(false);
+    }
+  };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };  
     
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  }, [isOpen]);
 
   return (
     <nav className="transition-colors duration-500 ease-in-out transform -translate-y-1 fixed left-0 right-0 bg-gray-100 dark:bg-gray-800 text:black dark:text-white text-2xl p-4 shadow-lg rounded-lg z-50">
@@ -48,8 +48,9 @@ const Navbar = () => {
         
         {/* Hamburger Button */}
         <button
+          id="menu-button"
           className="xl:hidden dark:text-white focus:outline-none"
-          onClick={() => setIsOpen(prev => !prev)}
+          onClick={toggleMenu}
         >
           <svg
             className="w-6 h-6"
