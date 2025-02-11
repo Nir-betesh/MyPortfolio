@@ -26,9 +26,10 @@ const Home = () => {
         </div>
         <a href="#projects"        >
           <button
-            className="w-40 h-12 bg-black dark:bg-white text-white dark:text-black font-bold px-4 py-2 rounded text-center transition-transform duration-300 ease-in-out transform hover:scale-110
+            className="bg-black dark:bg-white text-white dark:text-black font-bold px-4 py-2 
+            rounded text-center transition-transform duration-300 ease-in-out transform hover:scale-110
             hover:bg-gray-800 dark:hover:bg-gray-50
-            glow-button dark:dark-glow-button"
+            glow-button dark:dark-glow-button text-xl"
             >
             View My Work
           </button>

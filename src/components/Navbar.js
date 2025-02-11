@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
+import AnimatedText from './AnimatedText';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,11 +11,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  };
+
 
   const restartAnimation = (sectionId) => {
     const blocks = document.querySelectorAll(`${sectionId} .Block`);
@@ -25,6 +23,12 @@ const Navbar = () => {
   };
 
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };  
+    
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -35,14 +39,17 @@ const Navbar = () => {
     <nav className="transition-colors duration-500 ease-in-out transform -translate-y-1 fixed left-0 right-0 bg-gray-100 dark:bg-gray-800 text:black dark:text-white text-2xl p-4 shadow-lg rounded-lg z-50">
       <div className="glow-text dark:dark-glow-text container flex mx-auto justify-between items-center">
         <h1 className="transform -translate-y-2 text-3xl font-bold">
-          <a href="#home">My Portfolio</a>
+          <a href="#home">
+            <AnimatedText text="My Portfolio"/>
+          </a>
         </h1>
-        <ThemeSwitcher />
 
+        <ThemeSwitcher />
+        
         {/* Hamburger Button */}
         <button
-          className="md:hidden dark:text-white focus:outline-none"
-          onClick={toggleMenu}
+          className="xl:hidden dark:text-white focus:outline-none"
+          onClick={() => setIsOpen(prev => !prev)}
         >
           <svg
             className="w-6 h-6"
@@ -61,7 +68,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop View */}
-        <ul className="transform -translate-y-2 hidden md:flex space-x-16">
+        <ul className="transform -translate-y-2 hidden xl:flex space-x-16">
           {[
             { id: '#home', name: 'Home' },
             { id: '#about', name: 'About' },
@@ -86,7 +93,7 @@ const Navbar = () => {
         {isOpen && (
           <ul
             ref={menuRef}
-            className="absolute top-16 left-0 w-full dark:bg-gray-700 bg-gray-200 dark:text-white text-black rounded-md flex flex-col space-y-4 p-4 md:hidden"
+            className="absolute top-16 left-0 w-full dark:bg-gray-700 bg-gray-200 dark:text-white text-black rounded-md flex flex-col space-y-4 p-4 xl:hidden"
           >
             {[
               { id: '#home', name: 'Home' },

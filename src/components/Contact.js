@@ -26,7 +26,9 @@ const Contact = () => {
 
   return (
     <section id="contact" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-white  dark:bg-gray-900 text:black dark:text-white">
-      <h2 className="Block text-3xl text-center font-bold mb-4">Contact Me</h2>
+      <h2 className="Block text-5xl font-bold mb-28 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+        <AnimatedText text="Contact Me"/>
+      </h2>
       <form ref={form} onSubmit={sendEmail} className="Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
         <input
           type="text"

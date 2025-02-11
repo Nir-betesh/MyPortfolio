@@ -3,11 +3,11 @@ import AnimatedText from './AnimatedText';
 
 const About = () => {
 
-  const hiIm = 'Hi, I’m ';
+  const hiIm = "Hi, I’m ";
   return (
-    <section id="about" className="transition-colors duration-500 ease-in-out min-h-screen scroll-mt-16 p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white flex justify-center items-center">
+    <section id="about" className="transition-colors duration-500 ease-in-out min-h-screen scroll-mt-16 bg-gray-100 p-8 dark:bg-gray-800 text-black dark:text-white flex justify-center">
       <div className="max-w-4xl text-center">
-        <h2 className="Block text-4xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
+        <h2 className="Block text-5xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
           <AnimatedText text="About Me"/>
         </h2>
         <p className="Block text-lg leading-relaxed animate-fade-in opacity-90">
@@ -65,7 +65,7 @@ const About = () => {
           </div>
         </div>
 
-        <p className="Block mt-8 text-lg font-semibold animate-fade-in-up">
+        <p className="Block mt-8 text-3xl font-semibold animate-fade-in-up">
           Let’s connect and create something amazing together!
         </p>
       </div>

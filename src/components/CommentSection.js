@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import AnimatedText from './AnimatedText';
+
 
 const CommentSection = () => {
   const [comments, setComments] = useState([]);
@@ -72,7 +74,9 @@ const CommentSection = () => {
 
   return (
     <section id="comments" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-200 dark:bg-gray-800 dark:text-white">
-      <h2 className="Block text-3xl text-center font-bold mb-4">Leave a Comment</h2>
+      <h2 className="Block text-center text-5xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
+      <AnimatedText text="Leave a Comment"/>
+        </h2>
       <form onSubmit={handleSubmit} className="Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
         <input
           type="text"
@@ -107,7 +111,9 @@ const CommentSection = () => {
         className="text-center mt-16 grid grid-cols-1 gap-4 items-center justify-center"
         style={{ minHeight: "300px" }} // Ensures consistent height for 3 comments
       >
-        <h3 className="text-3xl font-bold mb-4">Comments:</h3>
+        <h3 className="text-3xl font-bold mb-4 glow-text dark:dark-glow-text">
+          <AnimatedText text="Comments" />
+        </h3>
         {currentComments.length > 0 ? currentComments.map((comment) => (
               <div
                 key={comment._id}

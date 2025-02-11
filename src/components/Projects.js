@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
+import AnimatedText from './AnimatedText';
+
 const Projects = () => {
 
   const projects = [
@@ -95,7 +97,9 @@ const Projects = () => {
       id="projects"
       className="space-y-40 transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
     >
-      <h2 className="Block text-center text-3xl font-bold mb-4">My Projects</h2>
+      <h2 className="Block text-5xl font-bold mb-28 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+        <AnimatedText text="My Projects"/>
+      </h2>
       <div className="Block text-center grid grid-cols-1 gap-6">
         <Slider {...settings } className="flex-col">
           {projects.map((project, index) => (

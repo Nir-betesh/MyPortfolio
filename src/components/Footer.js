@@ -1,6 +1,15 @@
 import React from 'react';
 
 const Footer = () => {
+  const restartAnimation = (sectionId) => {
+    const blocks = document.querySelectorAll(`${sectionId} .Block`); // חיפוש כל ה-Block-ים במקטע
+    blocks.forEach((block) => {
+      block.classList.remove('Block'); // הסרת הקלאס
+      void block.offsetWidth; // איפוס האנימציה
+      block.classList.add('Block'); // הוספת הקלאס מחדש
+    });
+  };
+
   return (
     <footer className="transition-colors duration-500 ease-in-out bg-gray-100 dark:bg-gray-900 text:black dark:text-white py-6">
       <div className="container mx-auto text-center">
@@ -29,11 +38,21 @@ const Footer = () => {
 
         {/* Quick Navigation */}
         <div className="mt-4">
-          <a href="#home"     className="mx-2 text-blue-400 hover:underline"> Home </a>
-          <a href="#about"    className="mx-2 text-blue-400 hover:underline"> About </a>
-          <a href="#skills"   className="mx-2 text-blue-400 hover:underline"> Skills </a>
-          <a href="#projects" className="mx-2 text-blue-400 hover:underline"> Projects </a>
-          <a href="#contact"  className="mx-2 text-blue-400 hover:underline"> Contact </a>
+          <a href="#home" className="mx-2 text-blue-400 hover:underline" onClick={() => restartAnimation('#home')}>
+            Home
+          </a>
+          <a href="#about" className="mx-2 text-blue-400 hover:underline" onClick={() => restartAnimation('#about')}>
+            About
+          </a>
+          <a href="#skills" className="mx-2 text-blue-400 hover:underline" onClick={() => restartAnimation('#skills')}>
+            Skills
+          </a>
+          <a href="#projects" className="mx-2 text-blue-400 hover:underline" onClick={() => restartAnimation('#projects')}>
+            Projects
+          </a>
+          <a href="#contact" className="mx-2 text-blue-400 hover:underline" onClick={() => restartAnimation('#contact')}>
+            Contact
+          </a>
         </div>
       </div>
     </footer>
