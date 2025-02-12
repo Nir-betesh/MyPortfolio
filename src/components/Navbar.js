@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
+import AnimatedText from './AnimatedText';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,20 +10,19 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const restartAnimation = (sectionId) => {
+    const blocks = document.querySelectorAll(`${sectionId} .Block`);
+    blocks.forEach((block) => {
+      block.classList.remove('Block'); 
+      void block.offsetWidth; 
+      block.classList.add('Block'); 
+    });
+  };
+  
   const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
+    if (menuRef.current && !menuRef.current.contains(event.target) && !event.target.closest("#menu-button")) {
       setIsOpen(false);
     }
-  };
-
-  // הפעלת האנימציה מחדש לכל פריט Block בתוך המקטע
-  const restartAnimation = (sectionId) => {
-    const blocks = document.querySelectorAll(`${sectionId} .Block`); // חיפוש כל האלמנטים עם המחלקה Block בתוך המקטע
-    blocks.forEach((block) => {
-      block.classList.remove('Block'); // הסרת המחלקה כדי לאפס את האנימציה
-      void block.offsetWidth; // טריק לאיפוס האנימציה
-      block.classList.add('Block'); // הוספת המחלקה מחדש כדי להפעיל את האנימציה
-    });
   };
 
   useEffect(() => {
@@ -36,12 +36,17 @@ const Navbar = () => {
     <nav className="transition-colors duration-500 ease-in-out transform -translate-y-1 fixed left-0 right-0 bg-gray-100 dark:bg-gray-800 text:black dark:text-white text-2xl p-4 shadow-lg rounded-lg z-50">
       <div className="glow-text dark:dark-glow-text container flex mx-auto justify-between items-center">
         <h1 className="transform -translate-y-2 text-3xl font-bold">
-          <a href="#home">My Portfolio</a>
+          <a href="#home">
+            <AnimatedText text="My Portfolio"/>
+          </a>
         </h1>
+
         <ThemeSwitcher />
-        {/* כפתור תפריט נייד */}
+        
+        {/* Hamburger Button */}
         <button
-          className="md:hidden dark:text-white focus:outline-none"
+          id="menu-button"
+          className="xl:hidden dark:text-white focus:outline-none"
           onClick={toggleMenu}
         >
           <svg
@@ -60,8 +65,8 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* תפריט דסקטופ */}
-        <ul className="transform -translate-y-2 hidden md:flex space-x-16">
+        {/* Desktop View */}
+        <ul className="transform -translate-y-2 hidden xl:flex space-x-16">
           {[
             { id: '#home', name: 'Home' },
             { id: '#about', name: 'About' },
@@ -82,11 +87,11 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* תפריט נייד */}
+        {/* Mobile View */}
         {isOpen && (
           <ul
             ref={menuRef}
-            className="absolute top-16 left-0 w-full dark:bg-gray-700 bg-gray-200 dark:text-white text-black rounded-md flex flex-col space-y-4 p-4 md:hidden"
+            className="absolute top-16 left-0 w-full dark:bg-gray-700 bg-gray-200 dark:text-white text-black rounded-md flex flex-col space-y-4 p-4 xl:hidden"
           >
             {[
               { id: '#home', name: 'Home' },
