@@ -8,7 +8,7 @@ const CommentSection = () => {
   const [content, setContent] = useState("");
   const [currentPage, setCurrentPage] = useState(1); 
   const commentsPerPage = 3; 
-  const BACKEND_URL = "http://localhost:5000";
+  const BACKEND_URL = "https://nir-betsh.vercel.app/";
 
   useEffect(() => {
     const fetchComments = async () => {
