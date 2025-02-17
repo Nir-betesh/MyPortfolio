@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+
+# Build files
+build/
+.cache/
+.eslintcache
+
+# Logs
+logs/
+*.log
+yarn-error.log
+yarn-debug.log
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Editor files
+.vscode/
+.idea/
+.DS_Store
