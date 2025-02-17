@@ -2,11 +2,11 @@ import React from 'react';
 
 const Footer = () => {
   const restartAnimation = (sectionId) => {
-    const blocks = document.querySelectorAll(`${sectionId} .Block`); // חיפוש כל ה-Block-ים במקטע
+    const blocks = document.querySelectorAll(`${sectionId} .Block`);
     blocks.forEach((block) => {
-      block.classList.remove('Block'); // הסרת הקלאס
-      void block.offsetWidth; // איפוס האנימציה
-      block.classList.add('Block'); // הוספת הקלאס מחדש
+      block.classList.remove('Block');
+      void block.offsetWidth; 
+      block.classList.add('Block'); 
     });
   };
 
