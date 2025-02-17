@@ -2,18 +2,20 @@ import React, { useRef } from 'react';
 import { gsap } from 'gsap';
 
 const AnimatedText = ({ text }) => {
-
   const textRef = useRef(null);
+
   const handleMouseMove = (event) => {
+    if (!textRef.current) return;
     const letters = textRef.current.querySelectorAll('.letter');
 
     letters.forEach((letter) => {
+      if (!letter || !letter.getBoundingClientRect) return;
 
       const rect = letter.getBoundingClientRect();
-      const dx = event.clientX - ( rect.left + rect.width / 2 );
-      const dy = event.clientY - ( rect.top + rect.height / 2 );
+      const dx = event.clientX - (rect.left + rect.width / 2);
+      const dy = event.clientY - (rect.top + rect.height / 2);
       const distance = Math.sqrt(dx * dx + dy * dy);
-      const maxDistance = 100; // Max distance for repulsion
+      const maxDistance = 100;
       const power = Math.max(0, maxDistance - distance) / maxDistance;
 
       gsap.to(letter, {
@@ -25,8 +27,8 @@ const AnimatedText = ({ text }) => {
     });
   };
 
-  // Reset letters when the mouse leaves
   const handleMouseLeave = () => {
+    if (!textRef.current) return;
     const letters = textRef.current.querySelectorAll('.letter');
     gsap.to(letters, {
       x: 0,
@@ -41,18 +43,26 @@ const AnimatedText = ({ text }) => {
       ref={textRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ display: 'inline-block', cursor: 'pointer' }}
+      style={{
+        display: 'inline-block',
+        cursor: 'pointer',
+        wordWrap: 'break-word',
+        overflowWrap: 'break-word',
+        whiteSpace: 'normal',
+        textAlign: 'center',
+      }}
     >
-      {text.split('').map((char, index) => (
-        <span
-          key={index}
-          className="letter"
-          style={{
-            display: 'inline-block',
-            marginRight: char === ' ' ? '0.3em' : '0',
-          }}
-        >
-          {char}
+      {text.split(' ').map((word, wordIndex) => (
+        <span key={wordIndex} className="word" style={{ display: 'inline-block', marginRight: '0.5em' }}>
+          {word.split('').map((char, letterIndex) => (
+            <span 
+              key={letterIndex} 
+              className="letter" 
+              style={{ display: 'inline-block' }}
+            >
+              {char}
+            </span>
+          ))}
         </span>
       ))}
     </div>

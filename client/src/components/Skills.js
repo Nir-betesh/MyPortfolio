@@ -22,11 +22,11 @@ const skills = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen flex flex-col justify-center items-center bg-white dark:bg-gray-900 dark:text-white pb-12">
-      <div className="w-full max-w-5xl px-4 md:px-8 lg:px-12">
-        <h2 className="Block text-5xl font-bold mb-28 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+    <section id="skills" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen flex flex-col justify-center items-center p-8 bg-white dark:bg-gray-900 dark:text-white">
+        <h2 className="Block text-5xl font-bold mb-32 text-center glow-text dark:dark-glow-text animate-fade-in-down">
           <AnimatedText text="My Skills"/>
         </h2>
+      <div className="top-10 w-full max-w-5xl px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skill, index) => (
             <div key={index} className="Block space-y-2">

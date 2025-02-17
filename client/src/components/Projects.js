@@ -88,13 +88,13 @@ const Projects = () => {
       id="projects"
       className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
     >
-      <h2 className="text-5xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+      <h2 className="Block text-5xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
         <AnimatedText text="My Projects" />
       </h2>
 
       {/* Mobile: Show ALL projects in full list */}
       {isMobile ? (
-        <div className="flex flex-col w-full items-center gap-8">
+        <div className="Block flex flex-col w-full items-center gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -122,7 +122,7 @@ const Projects = () => {
           ))}
         </div>
       ) : (
-        <div className="text-center grid grid-cols-1 gap-6">
+        <div className="Block text-center grid grid-cols-1 gap-6">
           <Slider {...settings} className="flex-col">
             {projects.map((project, index) => (
               <div
