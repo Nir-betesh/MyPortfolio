@@ -6,7 +6,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+  
     emailjs.sendForm(
       'service_iwv2y39', 
       'template_g42tioe',
@@ -16,6 +16,7 @@ const Contact = () => {
       (result) => {
         console.log(result.text);
         alert('I received your message and will get back to you soon!');
+        form.current.reset(); // ניקוי השדות לאחר שליחה מוצלחת
       },
       (error) => {
         console.log(error.text);
@@ -23,6 +24,7 @@ const Contact = () => {
       }
     );
   };
+  
 
   return (
     <section id="contact" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-white  dark:bg-gray-900 text:black dark:text-white">
