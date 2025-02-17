@@ -122,7 +122,6 @@ const Projects = () => {
           ))}
         </div>
       ) : (
-        // Desktop: Keep Original Slider
         <div className="text-center grid grid-cols-1 gap-6">
           <Slider {...settings} className="flex-col">
             {projects.map((project, index) => (
