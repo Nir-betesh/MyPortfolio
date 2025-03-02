@@ -24,26 +24,6 @@ const About = () => {
         <div className="mt-8 space-y-6">
           <div className="animate-fade-in-up">
             <h3 className="Block text-3xl font-semibold dark:text-white glow-text dark:dark-glow-text">
-              <AnimatedText text="Highlights"/>
-            </h3>
-            <ul className="Block list-disc list-inside mt-4 text-left">
-              <li>
-                <span className="font-bold dark:text-white glow-text dark:dark-glow-text">Full-Stack Development:</span> Designing and implementing dynamic systems using Svelte, SvelteKit, TypeScript, and Drizzle.
-              </li>
-              <li>
-                <span className="font-bold dark:text-white glow-text dark:dark-glow-text">Blockchain Expertise:</span> Creating an Ethereum-based voting system with Solidity and integrating it with a modern web interface.
-              </li>
-              <li>
-                <span className="font-bold dark:text-white glow-text dark:dark-glow-text">Game Development:</span> Building games like Snake and Space Shooter in Unity with C#.
-              </li>
-              <li>
-                <span className="font-bold dark:text-white glow-text dark:dark-glow-text">Software Verification:</span> Developing and verifying systems using Promela and the SPIN model checker.
-              </li>
-            </ul>
-          </div>
-
-          <div className="animate-fade-in-up">
-            <h3 className="Block text-3xl font-semibold dark:text-white glow-text dark:dark-glow-text">
               <AnimatedText text="Beyond Code"/>
             </h3>
             <p className="Block mt-4 text-left">
@@ -60,7 +40,7 @@ const About = () => {
               <AnimatedText text="Hobbies"/>
             </h3>
             <p className="Block mt-4 leading-relaxed">
-              When I’m not coding, I enjoy pool, surfing, hiking, gaming, fitness, and cooking.
+              When I’m not coding, I enjoy billiards, surfing, hiking, gaming, fitness, and cooking.
             </p>
           </div>
         </div>

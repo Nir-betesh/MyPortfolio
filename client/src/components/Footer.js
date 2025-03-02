@@ -33,7 +33,6 @@ const Footer = () => {
           </a>
         </div>
 
-        {/* Copyright */}
         <p className="text-sm"> &copy; {new Date().getFullYear()} Nir's Portfolio. All rights reserved.</p>
 
         {/* Quick Navigation */}

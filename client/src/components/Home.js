@@ -1,6 +1,7 @@
 import React from 'react';
 import AnimatedText from './AnimatedText';
 const Home = () => {
+  
   const restartAnimation = (sectionId) => {
     const blocks = document.querySelectorAll(`${sectionId} .Block`);
     blocks.forEach((block) => {
