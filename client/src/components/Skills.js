@@ -2,22 +2,22 @@ import React from 'react';
 import AnimatedText from './AnimatedText';
 
 const skills = [
-  { name: 'Python', level: 95 },
+  { name: 'Python', level: 90 },
+  { name: 'JavaScript', level: 90 },
   { name: 'Java', level: 90 },
   { name: 'C', level: 90 },
-  { name: 'C#', level: 95 },
-  { name: 'Unity', level: 95},
-  { name: 'JavaScript', level: 95 },
-  { name: 'TypeScript', level: 90 },
-  { name: 'Svelte', level: 85 },
+  { name: 'C#', level: 90 },
+  { name: 'Unity', level: 90},
   { name: 'React', level: 90 },
   { name: 'Node.js', level: 90 },
-  { name: 'SvelteKit', level: 85 },
-  { name: 'Tailwind CSS', level: 95 },
+  { name: 'Tailwind CSS', level: 90 },
   { name: 'MongoDB', level: 85 },
   { name: 'Linux', level: 80 },
   { name: 'Git', level: 90 },
   { name: 'Agile Development', level: 90 },
+  { name: 'TypeScript', level: 90 },
+  { name: 'Svelte', level: 75 },
+  { name: 'SvelteKit', level: 70 },
 ];
 
 const Skills = () => {

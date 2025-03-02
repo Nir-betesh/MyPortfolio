@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AnimatedText from './AnimatedText';
 
-
 const CommentSection = () => {
   const [comments, setComments] = useState([]);
   const [author, setAuthor] = useState("");
@@ -27,7 +26,6 @@ const CommentSection = () => {
     fetchComments();
   }, [BACKEND_URL]);
 
-  // Handle comment submission
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -42,8 +40,8 @@ const CommentSection = () => {
 
       if (response.ok) {
         const newComment = await response.json();
-        setComments([...comments, newComment]); // Add the new comment to the list
-        setAuthor(""); // Clear the form
+        setComments([...comments, newComment]);
+        setAuthor("");
         setContent("");
       } else {
         console.error("Failed to submit comment");
@@ -108,8 +106,7 @@ const CommentSection = () => {
       </form>
       {/* View Comments */}
       <div
-        className="text-center mt-16 grid grid-cols-1 gap-4 items-center justify-center"
-        style={{ minHeight: "300px" }} // Ensures consistent height for 3 comments
+        className="text-center mt-16 grid grid-cols-1 gap-4 items-center justify-center min-h-72"
       >
         <h3 className="text-3xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Comments" />
@@ -175,8 +172,8 @@ const CommentSection = () => {
             }
 
             if (
-              (page === currentPage + 3 && page < totalPages) || // Ellipsis after current pages
-              (page === currentPage - 1 && page > 1) // Ellipsis before current pages
+              (page === currentPage + 3 && page < totalPages) || // Dots after current pages if needed
+              (page === currentPage - 1 && page > 1) // Dots before current pages if needed
             ) {
               return <span key={page}>...</span>;
             }

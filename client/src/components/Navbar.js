@@ -19,6 +19,7 @@ const Navbar = () => {
     });
   };
   
+  // Close menu when clicked outside the menu
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target) && !event.target.closest("#menu-button")) {
       setIsOpen(false);
@@ -43,7 +44,6 @@ const Navbar = () => {
 
         <ThemeSwitcher />
         
-        {/* Hamburger Button */}
         <button
           id="menu-button"
           className="xl:hidden dark:text-white focus:outline-none"
@@ -87,7 +87,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile View */}
+          {/* Mobile View (Hamburger Button) */}
         {isOpen && (
           <ul
             ref={menuRef}

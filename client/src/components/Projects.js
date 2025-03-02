@@ -92,7 +92,7 @@ const Projects = () => {
         <AnimatedText text="My Projects" />
       </h2>
 
-      {/* Mobile: Show ALL projects in full list */}
+      {/* Mobile View */}
       {isMobile ? (
         <div className="Block flex flex-col w-full items-center gap-8">
           {projects.map((project, index) => (
