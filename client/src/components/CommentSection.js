@@ -75,8 +75,8 @@ const CommentSection = () => {
       <h2 className="Block text-center text-5xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
       <AnimatedText text="Leave a Comment"/>
       </h2>
-      <div className=" dark:bg-[#12102f] pb-1 pt-1 justify-center translate-y-5 rounded-xl lg:w-1/3 mx-auto">
-        <form onSubmit={handleSubmit} className="-translate-y-7 Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
+      <div className=" dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
+        <form onSubmit={handleSubmit} className=" Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
           <input
             type="text"
             id="author"

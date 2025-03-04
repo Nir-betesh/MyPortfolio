@@ -30,7 +30,7 @@ const Skills = () => {
       <div className="top-10 -translate-y-20 w-full max-w-5xl px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((skill, index) => (
-            <div key={index} className="Block space-y-2 justify-center pb-4 pt-2 pr-2 pl-2 dark:bg-[#12102f] bg-gray-100 rounded-md">
+            <div key={index} className="Block space-y-2 justify-center pb-4 pt-2 pr-2 pl-2 dark:bg-[#12102f] rounded-md">
               <div className="flex justify-between ">
                 <span className="text-lg font-semibold">{skill.name}</span>
                 <span className="text-sm text-gray-600">{skill.level}%</span>

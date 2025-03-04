@@ -2,29 +2,12 @@
 @import "~slick-carousel/slick/slick-theme.css";
 
 
-
-.Home-background {
-  animation: fade-out linear forwards;
-  animation-timeline: view();
-  animation-range: exit -200px;
-  animation: header-background-anim;
-  animation-range: exit;
-}
-
-@keyframes header-backgroun-anim{
-  25% {opacity: 1;}
-  85%, 100% {opacity: 0; scale: 3;};
-}
-
-@keyframes fade-out{
-   to { opacity: 0;}
-}
-
 .Block {
   animation: appear 1s linear;
+
 }
 
-@keyframes appear {
+@keyframes appear { 
   0% {
     opacity: 0.1;
     transform: scale(0.7);
