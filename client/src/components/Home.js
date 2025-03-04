@@ -25,13 +25,13 @@ const Home = () => {
       </video>
 
       <div className="text-center duration-500 transition-all text-black dark:text-white">
-        <h1 className="text-center text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
+        <h1 className="text-center text-7xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Hi, I'm Nir"/>
         </h1>
-        <h1 className="text-center text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
+        <h1 className="text-center text-7xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Welcome to My Website!" />
         </h1>
-        <div className="text-center text-xl mb-6 glow-text dark:dark-glow-text">
+        <div className="text-center text-2xl mb-6 glow-text dark:dark-glow-text">
           <AnimatedText text="Building seamless digital experiences, one line of code at a time."/>
         </div>
         <a href="#projects"        >
@@ -39,7 +39,7 @@ const Home = () => {
             onClick={() => restartAnimation("#projects")}
             className="bg-black dark:bg-white text-white dark:text-black font-bold px-4 py-2 
             rounded text-center transition-transform duration-300 ease-in-out transform hover:scale-110
-            glow-button dark:dark-glow-button text-xl"
+            glow-button dark:dark-glow-button text-4xl"
             >
             View My Work
           </button>

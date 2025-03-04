@@ -72,7 +72,7 @@ const CommentSection = () => {
 
   return (
     <section id="comments" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] dark:text-white">
-      <h2 className="Block text-center text-5xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
+      <h2 className="Block text-center text-7xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
       <AnimatedText text="Leave a Comment"/>
       </h2>
       <div className=" dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
@@ -109,7 +109,7 @@ const CommentSection = () => {
       </div>
       {/* View Comments */}
       <div className=" dark:bg-[#12102f] pb-8 pt-4 rounded-xl lg:w-1/3 mx-auto text-center mt-16 grid grid-cols-1 gap-4 items-center min-h-72">
-        <h3 className="text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
+        <h3 className="text-7xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Comments" />
         </h3>
         {currentComments.length > 0 ? currentComments.map((comment) => (

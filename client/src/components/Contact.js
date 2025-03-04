@@ -26,7 +26,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-white dark:bg-[#0c0c0e] dark:text-white">
-      <h2 className="Block text-5xl font-bold mb-28 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+      <h2 className="Block text-7xl font-bold mb-28 text-center glow-text dark:dark-glow-text animate-fade-in-down">
         <AnimatedText text="Contact Me"/>
       </h2>
       <div className="Block bg-white dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">

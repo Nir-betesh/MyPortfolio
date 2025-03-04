@@ -23,21 +23,27 @@ const Projects = () => {
       video: "/videos/ekrut_project.mp4",
     },
     {
-      title: "Secure SMS Exchange",
-      description: "A Python-based implementation of secure SMS exchange, featuring RC6 encryption.",
-      link: "https://github.com/Nir-betesh/Crypto_Project",
+      "title": "Secure SMS Exchange",
+      "description": "A Python-based secure SMS exchange system integrating RC6 encryption for message confidentiality, Blind RSA signatures for authentication, and Diffie-Hellman key exchange for secure key distribution. This project ensures end-to-end security, preventing unauthorized access while maintaining efficient performance.",
+      "link": "https://github.com/Nir-betesh/Crypto_Project"
     },
     {
-      title: "TodoList Web Project",
-      description: "Developed a Todo List application as part of a final project in a Web Development course, utilizing React, Node.js, and TypeScript.",
-      link: "https://github.com/Nir-betesh/ToDoList-project",
+      "title": "TodoList Web Project",
+      "description": "A full-stack Todo List web application developed as a final project in a Web Development course. Built using React for the front end, Node.js for the backend, and TypeScript for type safety. The application features user authentication, and state management using React hooks. The project emphasizes clean code, reusable components, and an optimized user experience.",
+      "link": "https://github.com/Nir-betesh/ToDoList-project"
     },
     {
-      title: "Portfolio Website",
-      description: "Built a personal portfolio website using React and Tailwind CSS.",
-      link: "https://github.com/Nir-betesh/MyPortfolio",
+      "title": "Portfolio Website",
+      "description": "A modern and interactive portfolio website designed to showcase my projects, skills, and professional experience. Developed using React for component-based UI, Tailwind CSS for styling, and animations to enhance user experience. The website features a dynamic project showcase, a comment section (powered by MongoDB), and a smooth user interface with optimized performance. It is continuously updated with new projects and improvements.",
+      "link": "https://github.com/Nir-betesh/MyPortfolio"
     },
-  ];
+    {
+      "title": "Shelter Construction Management System",
+      "description": "A robust information system for managing a shelter construction company, built with Svelte, SvelteKit, and Drizzle. It features employee role management, contract tracking, inventory monitoring, and project scheduling. The system streamlines operations, enables role-based access control, and was optimized through Agile development and refactoring.",
+      "link": "https://github.com/Nir-betesh/shelter-construction-manager"
+    }
+    
+  ]
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -88,7 +94,7 @@ const Projects = () => {
       id="projects"
       className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] text-black dark:text-white"
     >
-      <h2 className="Block text-5xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+      <h2 className="Block text-7xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
         <AnimatedText text="My Projects" />
       </h2>
 
