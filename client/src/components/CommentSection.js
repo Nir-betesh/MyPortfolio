@@ -76,7 +76,7 @@ const CommentSection = () => {
       <AnimatedText text="Leave a Comment"/>
       </h2>
       <div className=" dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
-        <form onSubmit={handleSubmit} className=" Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
+        <form onSubmit={handleSubmit} className="Block pb-8 pt-8 grid grid-cols-1 gap-4 items-center justify-center">
           <input
             type="text"
             id="author"

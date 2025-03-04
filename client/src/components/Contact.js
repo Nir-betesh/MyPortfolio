@@ -29,8 +29,8 @@ const Contact = () => {
       <h2 className="Block text-5xl font-bold mb-28 text-center glow-text dark:dark-glow-text animate-fade-in-down">
         <AnimatedText text="Contact Me"/>
       </h2>
-      <div className="bg-white dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
-        <form ref={form} onSubmit={sendEmail} className="Block grid grid-cols-1 gap-4 items-center justify-center">
+      <div className="Block bg-white dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
+        <form ref={form} onSubmit={sendEmail} className="Block pb-8 pt-8 grid grid-cols-1 gap-4 items-center justify-center">
           
           <input
             type="text"
