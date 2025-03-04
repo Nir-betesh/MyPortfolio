@@ -38,19 +38,5 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
-
-// DELETE /api/comments/:id - Delete a comment by ID
-router.delete('/:id', async (req, res) => {
-    try {
-      const comment = await Comment.findByIdAndDelete(req.params.id);
-      if (!comment) {
-        return res.status(404).json({ error: 'Comment not found' });
-      }
-      res.status(200).json({ message: 'Comment deleted successfully' });
-    } catch (err) {
-      res.status(500).json({ error: err.message });
-    }
-  });
   
 module.exports = router;

@@ -7,12 +7,11 @@ const CommentSection = () => {
   const [content, setContent] = useState("");
   const [currentPage, setCurrentPage] = useState(1); 
   const commentsPerPage = 3; 
-  const BACKEND_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await fetch(`${BACKEND_URL}/api/comments`);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/comments`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -24,13 +23,13 @@ const CommentSection = () => {
     };
 
     fetchComments();
-  }, [BACKEND_URL]);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${BACKEND_URL}/api/comments`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
