@@ -43,14 +43,8 @@ const AnimatedText = ({ text }) => {
       ref={textRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{
-        display: 'inline-block',
-        cursor: 'pointer',
-        wordWrap: 'break-word',
-        overflowWrap: 'break-word',
-        whiteSpace: 'normal',
-        textAlign: 'center',
-      }}
+      className="inline-block cursor-pointer break-words whitespace-normal text-center"
+
     >
       {text.split(' ').map((word, wordIndex) => (
         <span key={wordIndex} className="word" style={{ display: 'inline-block', marginRight: '0.5em' }}>

@@ -71,50 +71,51 @@ const CommentSection = () => {
   };
 
   return (
-    <section id="comments" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-200 dark:bg-gray-800 dark:text-white">
+    <section id="comments" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] dark:text-white">
       <h2 className="Block text-center text-5xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
       <AnimatedText text="Leave a Comment"/>
-        </h2>
-      <form onSubmit={handleSubmit} className="Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
-        <input
-          type="text"
-          id="author"
-          value={author}
-          placeholder="Your Name"
-          autoComplete="name"
-          onChange={(e) => setAuthor(e.target.value)}
-          className="Block p-2 text-black dark:text-white bg-gray-100 dark:bg-gray-600 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto"
-          required
-        />
-        <textarea
-          id="content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Your Comment"
-          autoComplete="off"
-          className="Block p-2 text-black dark:text-white bg-gray-100 dark:bg-gray-600 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto"
-          required
-        />
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            className="Block w-40 h-12 bg-green-400 text-white dark:text-gray-900 font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-green-400"
-          >
-            Submit
-          </button>
-        </div>
-      </form>
+      </h2>
+      <div className=" dark:bg-[#12102f] pb-1 pt-1 justify-center translate-y-5 rounded-xl lg:w-1/3 mx-auto">
+        <form onSubmit={handleSubmit} className="-translate-y-7 Block mt-16 grid grid-cols-1 gap-4 items-center justify-center">
+          <input
+            type="text"
+            id="author"
+            value={author}
+            placeholder="Your Name"
+            autoComplete="name"
+            onChange={(e) => setAuthor(e.target.value)}
+            className="Block p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-60 lg:w-5/6 mx-auto"
+            required
+          />
+          <textarea
+            id="content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="Your Comment"
+            autoComplete="off"
+            className="Block p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-60 lg:w-5/6 mx-auto"
+            required
+          />
+          <div className="flex justify-center">
+            <button
+              type="submit"
+              className="Block w-40 h-12 bg-gray-300 dark:bg-[#36318c] dark:text-white font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110"
+            >
+            
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
       {/* View Comments */}
-      <div
-        className="text-center mt-16 grid grid-cols-1 gap-4 items-center justify-center min-h-72"
-      >
-        <h3 className="text-3xl font-bold mb-4 glow-text dark:dark-glow-text">
+      <div className=" dark:bg-[#12102f] pb-8 pt-4 rounded-xl lg:w-1/3 mx-auto text-center mt-16 grid grid-cols-1 gap-4 items-center min-h-72">
+        <h3 className="text-5xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Comments" />
         </h3>
         {currentComments.length > 0 ? currentComments.map((comment) => (
               <div
                 key={comment._id}
-                className="bg-white dark:bg-gray-600 Block gap-1 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto"
+                className="bg-white dark:bg-[#151342] Block gap-1 rounded-md w-60 lg:w-5/6 mx-auto"
               >
                 <p className="text-xl">
                   <strong className="text-2xl">{comment.author}</strong>
@@ -131,19 +132,18 @@ const CommentSection = () => {
           (_, idx) => (
             <div
               key={`placeholder-${idx}`}
-              className="bg-gray-100 dark:bg-gray-600 Block gap-1 rounded-md w-full sm:w-3/4 lg:w-1/3 mx-auto h-20"
+              className="bg-gray-200 dark:bg-[#151342] Block gap-1 rounded-md  w-60 lg:w-5/6 mx-auto h-32"
             ></div>
           )
         )}
-      </div>
-      <div className="flex justify-center mt-8 items-center">
+      <div className="flex translate-x-1.5 justify-center mt-8 items-center">
         <button
           onClick={handlePrevPage}
           disabled={currentPage === 1}
-          className={`px-4 py-2 mr-4 rounded bg-gray-300 dark:bg-gray-700 ${
-            currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-400"
+          className={`transition-transform duration-100 ease-in-out transform -translate-x-full px-4 py-2 mr-4 rounded bg-gray-300 dark:bg-[#151342] ${
+            currentPage === 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-400 hover:scale-110"
           }`}
-        >
+          >
           Prev
         </button>
         {/* Page Numbers */}
@@ -158,19 +158,19 @@ const CommentSection = () => {
             ) {
               return (
                 <button
-                  key={page}
-                  onClick={() => setCurrentPage(page)}
-                  className={`px-4 py-2 rounded ${
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`px-4 py-2 rounded ${
                     page === currentPage
-                      ? "bg-gray-400 dark:bg-gray-600 text-white"
-                      : "bg-gray-300 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-500"
+                    ? "bg-gray-400 dark:bg-[#36318c] text-white"
+                    : "bg-gray-300 dark:bg-[#47438b] hover:bg-gray-200 dark:hover:bg-gray-500"
                   }`}
-                >
+                  >
                   {page}
                 </button>
               );
             }
-
+            
             if (
               (page === currentPage + 3 && page < totalPages) || // Dots after current pages if needed
               (page === currentPage - 1 && page > 1) // Dots before current pages if needed
@@ -185,12 +185,13 @@ const CommentSection = () => {
         <button
           onClick={handleNextPage}
           disabled={currentPage === totalPages}
-          className={`px-4 py-2 ml-4 rounded bg-gray-300 dark:bg-gray-700 ${
-            currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-400"
+          className={`transition-transform duration-100 translate-x-full ease-in-out transform px-4 py-2 mr-4 rounded bg-gray-300 dark:bg-[#151342] ${
+            currentPage === totalPages ? "opacity-50 cursor-not-allowed" : "hover:bg-gray-400 hover:scale-110"
           }`}
-        >
+          >
           Next
         </button>
+        </div>
       </div>
     </section>
   );

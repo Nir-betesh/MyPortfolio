@@ -86,7 +86,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-gray-800 text-black dark:text-white"
+      className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] text-black dark:text-white"
     >
       <h2 className="Block text-5xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
         <AnimatedText text="My Projects" />
@@ -98,7 +98,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-black p-4 rounded-lg shadow-md w-full sm:w-3/4"
+              className="bg-white dark:bg-[#151342] p-4 rounded-lg shadow-md w-full sm:w-3/4"
             >
               <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
               <p className="text-lg">{project.description}</p>
@@ -132,7 +132,7 @@ const Projects = () => {
                 }`}
               >
                 {/* Project Info */}
-                <div className="dark:bg-black bg-white min-h-[500px] w-300 flex flex-col flex-wrap justify-between p-4 border rounded shadow-xl">
+                <div className="dark:bg-[#151342] bg-white min-h-[500px] w-300 flex flex-col flex-wrap justify-between p-4 border rounded-3xl shadow-xl">
                   <h3 className="text-3xl font-semibold mb-2">
                     {project.title}
                   </h3>

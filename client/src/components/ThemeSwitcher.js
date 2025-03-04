@@ -14,7 +14,7 @@ const ThemeToggle = () => {
   
 
   return (
-    <div className="border-separate flex items-center justify-center bg-gray-100 dark:bg-gray-800 transition-all duration-500">
+    <div className="border-separate flex items-center justify-center bg-gray-100 dark:bg-gray-900 transition-all duration-500">
       <button
         onClick={toggleTheme}
         className="w-14 h-8 flex items-center bg-gray-300 dark:bg-gray-700 rounded-full p-1 transition-all duration-500"
