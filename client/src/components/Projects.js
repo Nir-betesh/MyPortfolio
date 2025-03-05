@@ -24,24 +24,24 @@ const Projects = () => {
     },
     {
       "title": "Secure SMS Exchange",
-      "description": "A Python-based secure SMS exchange system integrating RC6 encryption for message confidentiality, Blind RSA signatures for authentication, and Diffie-Hellman key exchange for secure key distribution. This project ensures end-to-end security, preventing unauthorized access while maintaining efficient performance.",
+      "description": "A Python-based secure SMS exchange system integrating RC6 encryption for message confidentiality, Blind RSA signatures for authentication, and Diffie-Hellman key exchange for secure key distribution. This project ensures end-to-end security, preventing unauthorized access.",
       "link": "https://github.com/Nir-betesh/Crypto_Project"
     },
     {
       "title": "TodoList Web Project",
-      "description": "A full-stack Todo List web application developed as a final project in a Web Development course. Built using React for the front end, Node.js for the backend, and TypeScript for type safety. The application features user authentication, and state management using React hooks. The project emphasizes clean code, reusable components, and an optimized user experience.",
+      "description": "A Todo List web application. Built using React for the front end, Node.js for the backend, and TypeScript for type safety. The project emphasizes clean code, reusable components, and an optimized user experience.",
       "link": "https://github.com/Nir-betesh/ToDoList-project"
     },
     {
       "title": "Portfolio Website",
-      "description": "A modern and interactive portfolio website designed to showcase my projects, skills, and professional experience. Developed using React for component-based UI, Tailwind CSS for styling, and animations to enhance user experience. The website features a dynamic project showcase, a comment section (powered by MongoDB), and a smooth user interface with optimized performance. It is continuously updated with new projects and improvements.",
+      "description": "An interactive portfolio. Built with React, Tailwind CSS, and animations. MongoDB-powered comment section, and optimized performance. Continuously updated with new projects.",
       "link": "https://github.com/Nir-betesh/MyPortfolio"
     },
     {
-      "title": "Shelter Construction Management System",
-      "description": "A robust information system for managing a shelter construction company, built with Svelte, SvelteKit, and Drizzle. It features employee role management, contract tracking, inventory monitoring, and project scheduling. The system streamlines operations, enables role-based access control, and was optimized through Agile development and refactoring.",
+      "title": "Construction Management System",
+      "description": "An information system for managing a shelter construction company, built with Svelte, SvelteKit, and Drizzle. Includes role-based access control, contract tracking, inventory monitoring, and project scheduling. Developed using Agile methodology.",
       "link": "https://github.com/Nir-betesh/shelter-construction-manager"
-    }
+    }    
     
   ]
 
@@ -100,11 +100,11 @@ const Projects = () => {
 
       {/* Mobile View */}
       {isMobile ? (
-        <div className="Block flex flex-col w-full items-center gap-8">
+        <div className="Block flex p-4 flex-col w-full items-center gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-[#151342] p-4 rounded-lg shadow-md w-full sm:w-3/4"
+              className="bg-white dark:bg-[#151342] rounded-lg shadow-md w-full sm:w-3/4"
             >
               <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
               <p className="text-lg">{project.description}</p>
@@ -138,7 +138,7 @@ const Projects = () => {
                 }`}
               >
                 {/* Project Info */}
-                <div className="dark:bg-[#151342] bg-white min-h-[500px] w-300 flex flex-col flex-wrap justify-between p-4 border rounded-3xl shadow-xl">
+                <div className="dark:bg-[#151342] bg-white min-h-[500px] w-400 flex flex-col flex-wrap justify-between p-4 border rounded-3xl shadow-xl">
                   <h3 className="text-3xl font-semibold mb-2">
                     {project.title}
                   </h3>
