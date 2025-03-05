@@ -34,9 +34,9 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="transition-colors duration-500 ease-in-out transform -translate-y-1 fixed left-0 right-0 bg-gray-100 dark:bg-gray-900 text:black dark:text-white text-3xl p-4 shadow-lg rounded-lg z-50">
+    <nav className="transition-colors duration-500 ease-in-out transform -translate-y-7 fixed left-0 right-0 bg-gray-100 dark:bg-gray-900 text:black  dark:text-white text-3xl p-4 shadow-lg rounded-lg z-50">
       <div className="glow-text dark:dark-glow-text container flex mx-auto justify-between items-center">
-        <h1 className="transform -translate-y-2 text-3xl font-bold">
+        <h1 className="transform text-3xl font-bold">
           <a href="#home">
             <AnimatedText text="My Portfolio"/>
           </a>
@@ -66,7 +66,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop View */}
-        <ul className="transform -translate-y-2 hidden xl:flex space-x-16">
+        <ul className="transform hidden xl:flex space-x-16">
           {[
             { id: '#home', name: 'Home' },
             { id: '#about', name: 'About' },

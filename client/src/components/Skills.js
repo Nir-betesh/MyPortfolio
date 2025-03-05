@@ -23,7 +23,7 @@ const skills = [
 const Skills = () => {
   return (
     <section id="skills" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen flex flex-col justify-center items-center p-8 dark:bg-[#0c0c0e] dark:text-white">
-        <h2 className="Block text-7xl font-bold mb-32 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+        <h2 className="Block text-6xl font-bold mb-32 text-center glow-text dark:dark-glow-text animate-fade-in-down">
           <AnimatedText text="My Skills"/>
         </h2>
         

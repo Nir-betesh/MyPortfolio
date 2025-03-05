@@ -94,7 +94,7 @@ const Projects = () => {
       id="projects"
       className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] text-black dark:text-white"
     >
-      <h2 className="Block text-7xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+      <h2 className="Block text-6xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
         <AnimatedText text="My Projects" />
       </h2>
 

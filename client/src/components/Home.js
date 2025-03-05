@@ -24,7 +24,7 @@ const Home = () => {
         Your browser does not support the video tag.
       </video>
 
-      <div className="text-center duration-500 transition-all text-black dark:text-white">
+      <div className="text-center translate-x-1 duration-500 transition-all text-black dark:text-white">
         <h1 className="text-center text-7xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Hi, I'm Nir"/>
         </h1>

@@ -7,8 +7,8 @@ const About = () => {
   return (
     <section id="about" className="transition-colors duration-500 ease-in-out min-h-screen scroll-mt-16 bg-gray-100 p-8 dark:bg-[#101016] text-black dark:text-white flex justify-center">
       <div className="max-w-4xl text-center">
-        <h2 className="Block text-7xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
-          <AnimatedText text="About Me"/>
+        <h2 className="Block text-6xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
+          <AnimatedText text="About Me" className="break-words"/>
         </h2>
         <p className="Block leading-relaxed animate-fade-in opacity-90 text-left">
           {hiIm}
