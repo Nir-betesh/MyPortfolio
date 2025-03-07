@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import AnimatedText from './AnimatedText';
 
 const CommentSection = () => {
@@ -7,9 +7,23 @@ const CommentSection = () => {
   const [content, setContent] = useState("");
   const [currentPage, setCurrentPage] = useState(1); 
   const commentsPerPage = 3; 
+  const sectionRef = useRef(null);
+  
+  // Restart animation
+  const restartAnimation = (section) => {
+    const blocks = section.querySelectorAll('.appear-animation');
+    blocks.forEach((block) => {
+      block.classList.remove('appear-animation'); 
+      void block.offsetWidth; // Force reflow
+      block.classList.add('appear-animation'); 
+    });
+  };
 
   useEffect(() => {
+    const sectionElement = sectionRef.current;
+
     const fetchComments = async () => {
+
       try {
         const response = await fetch(`${process.env.REACT_APP_API_URL}/api/comments`);
         if (!response.ok) {
@@ -23,6 +37,23 @@ const CommentSection = () => {
     };
 
     fetchComments();
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio < 0.7) { // 70% visible means 30% scrolled past
+          restartAnimation(sectionElement);
+        }
+      }
+    );
+
+    if (sectionElement) {
+      observer.observe(sectionElement);
+    }
+
+    return () => {
+      if (sectionElement) {
+        observer.unobserve(sectionElement);
+      }
+    };
   }, []);
 
   const handleSubmit = async (e) => {
@@ -70,12 +101,12 @@ const CommentSection = () => {
   };
 
   return (
-    <section id="comments" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] dark:text-white">
-      <h2 className="appear-right-animation text-center text-6xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
+    <section ref={sectionRef} id="comments" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] dark:text-white">
+      <h2 className="appear-animation text-center text-6xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
       <AnimatedText text="Leave a Comment"/>
       </h2>
       <div className=" dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
-        <form onSubmit={handleSubmit} className="appear-right-animation pb-8 pt-8 grid grid-cols-1 gap-4 items-center justify-center">
+        <form onSubmit={handleSubmit} className="appear-animation pb-8 pt-8 grid grid-cols-1 gap-4 items-center justify-center">
           <input
             type="text"
             id="author"
@@ -83,7 +114,7 @@ const CommentSection = () => {
             placeholder="Your Name"
             autoComplete="name"
             onChange={(e) => setAuthor(e.target.value)}
-            className="appear-right-animation p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-80 lg:w-5/6 mx-auto"
+            className="appear-animation p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-80 lg:w-5/6 mx-auto"
             required
           />
           <textarea
@@ -92,13 +123,13 @@ const CommentSection = () => {
             onChange={(e) => setContent(e.target.value)}
             placeholder="Your Comment"
             autoComplete="off"
-            className="appear-right-animation p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-80 lg:w-5/6 mx-auto"
+            className="appear-animation p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-80 lg:w-5/6 mx-auto"
             required
           />
           <div className="flex justify-center">
             <button
               type="submit"
-              className="appear-right-animation w-40 h-12 bg-gray-300 dark:bg-[#36318c] dark:text-white font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110"
+              className="appear-animation w-40 h-12 bg-gray-300 dark:bg-[#36318c] dark:text-white font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110"
             >
             
               Submit
@@ -107,7 +138,7 @@ const CommentSection = () => {
         </form>
       </div>
       {/* View Comments */}
-      <div className=" dark:bg-[#12102f] pb-8 pt-4 rounded-xl  appear-right-animation lg:w-1/3 mx-auto text-center mt-16 grid grid-cols-1 gap-4 items-center min-h-72">
+      <div className=" dark:bg-[#12102f] pb-8 pt-4 rounded-xl  appear-animation lg:w-1/3 mx-auto text-center mt-16 grid grid-cols-1 gap-4 items-center min-h-72">
         <h3 className="text-6xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Comments" />
         </h3>

@@ -1,42 +1,8 @@
-import AnimatedText from './AnimatedText';
-import React, { useEffect, useRef } from 'react';
-  
+import AnimatedText from './AnimatedText';  
 
 const Home = () => {
-  const sectionRef = useRef(null);
-
-  // Restart animation
-  const restartAnimation = (sectionId) => {
-    const blocks = document.querySelectorAll('.appear-animation');
-    blocks.forEach((block) => {
-      block.classList.remove('appear-animation');
-      void block.offsetWidth; 
-      block.classList.add('appear-animation'); 
-    });
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.intersectionRatio < 0.7) { // 70% visible means 30% scrolled past
-          restartAnimation(sectionRef.current);
-        }
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} id="home" className="min-h-screen relative overflow-hidden flex flex-col justify-center">
+    <section id="home" className="min-h-screen relative overflow-hidden flex flex-col justify-center">
       <video
         autoPlay
         loop
