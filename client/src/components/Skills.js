@@ -1,37 +1,36 @@
 import AnimatedText from './AnimatedText';
 import React, { useEffect, useRef } from 'react';
 
-const restartAnimation = (section) => {
-  const blocks = section.querySelectorAll('.appear-animation');
-  blocks.forEach((block) => {
-    block.classList.remove('appear-animation'); 
-    void block.offsetWidth; // Force reflow
-    block.classList.add('appear-animation'); 
-  });
-};
-
-const skills = [
-  { name: 'Python', level: 90 },
-  { name: 'JavaScript', level: 90 },
-  { name: 'Java', level: 90 },
-  { name: 'C', level: 90 },
-  { name: 'C#', level: 90 },
-  { name: 'Unity', level: 90},
-  { name: 'React', level: 90 },
-  { name: 'Node.js', level: 90 },
-  { name: 'Tailwind CSS', level: 90 },
-  { name: 'MongoDB', level: 90 },
-  { name: 'Linux', level: 80 },
-  { name: 'Git', level: 90 },
-  { name: 'Agile Development', level: 90 },
-  { name: 'TypeScript', level: 90 },
-  { name: 'Svelte', level: 75 },
-  { name: 'SvelteKit', level: 70 },
-];
-
-
 const Skills = () => {
   const sectionRef = useRef(null);
+
+  const restartAnimation = (section) => {
+    const blocks = section.querySelectorAll('.appear-animation');
+    blocks.forEach((block) => {
+      block.classList.remove('appear-animation'); 
+      void block.offsetWidth; // Force reflow
+      block.classList.add('appear-animation'); 
+    });
+  };
+  
+  const skills = [
+    { name: 'Python', level: 90 },
+    { name: 'JavaScript', level: 90 },
+    { name: 'Java', level: 90 },
+    { name: 'C', level: 90 },
+    { name: 'C#', level: 90 },
+    { name: 'Unity', level: 90},
+    { name: 'React', level: 90 },
+    { name: 'Node.js', level: 90 },
+    { name: 'Tailwind CSS', level: 90 },
+    { name: 'MongoDB', level: 90 },
+    { name: 'Linux', level: 80 },
+    { name: 'Git', level: 90 },
+    { name: 'Agile Development', level: 90 },
+    { name: 'TypeScript', level: 90 },
+    { name: 'Svelte', level: 75 },
+    { name: 'SvelteKit', level: 70 },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(

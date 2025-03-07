@@ -2,19 +2,21 @@ import emailjs from '@emailjs/browser';
 import AnimatedText from './AnimatedText';
 import React, { useEffect, useRef } from 'react';
 
-const restartAnimation = (section) => {
-  const blocks = section.querySelectorAll('.appear-animation');
-  blocks.forEach((block) => {
-    block.classList.remove('appear-animation'); 
-    void block.offsetWidth; // Force reflow
-    block.classList.add('appear-animation'); 
-  });
-};
-
 const Contact = () => {
   const form = useRef();
   const sectionRef = useRef(null);
   
+  // Restart animation
+  const restartAnimation = (section) => {
+    const blocks = section.querySelectorAll('.appear-animation');
+    blocks.forEach((block) => {
+      block.classList.remove('appear-animation'); 
+      void block.offsetWidth; // Force reflow
+      block.classList.add('appear-animation'); 
+    });
+  };
+
+  // Reststart animation when got in to the section
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -35,6 +37,7 @@ const Contact = () => {
     };
   }, []);
 
+  // Send to me email
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs.sendForm(
@@ -45,7 +48,7 @@ const Contact = () => {
     ).then(
       (result) => {
         console.log(result.text);
-        alert('I received your message and will get back to you soon!');
+        alert('I\'ve received your message and will respond as soon as possible!');
         form.current.reset();
       },
       (error) => {
@@ -62,7 +65,6 @@ const Contact = () => {
       </h2>
       <div className="appear-animation bg-white dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
         <form ref={form} onSubmit={sendEmail} className="appear-animation pb-8 pt-8 grid grid-cols-1 gap-4 items-center justify-center">
-          
           <input
             type="text"
             name="from_name"

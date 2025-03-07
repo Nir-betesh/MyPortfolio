@@ -2,18 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import AnimatedText from "./AnimatedText";
 
-const restartAnimation = (section) => {
-  const blocks = section.querySelectorAll('.appear-animation');
-  blocks.forEach((block) => {
-    block.classList.remove('appear-animation'); 
-    void block.offsetWidth; // Force reflow
-    block.classList.add('appear-animation'); 
-  });
-};
-
 const Projects = () => {
   const sectionRef = useRef(null);
 
+  // Restart animation 
+  const restartAnimation = (section) => {
+    const blocks = section.querySelectorAll('.appear-animation');
+    blocks.forEach((block) => {
+      block.classList.remove('appear-animation'); 
+      void block.offsetWidth; // Force reflow
+      block.classList.add('appear-animation'); 
+    });
+  };
   const projects = [
     {
       title: "Space Shooter Game App",
