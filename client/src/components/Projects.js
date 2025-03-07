@@ -14,6 +14,7 @@ const Projects = () => {
       block.classList.add('appear-animation'); 
     });
   };
+  
   const projects = [
     {
       title: "Space Shooter Game App",
@@ -53,12 +54,12 @@ const Projects = () => {
       "description": "An information system for managing a shelter construction company, built with Svelte, SvelteKit, and Drizzle. Includes role-based access control, contract tracking, inventory monitoring, and project scheduling. Developed using Agile methodology.",
       "link": "https://github.com/Nir-betesh/shelter-construction-manager"
     }    
-    
   ]
 
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const sectionElement = sectionRef.current;
     // Check screen size
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768); // Mobile if width < 768px
@@ -71,19 +72,19 @@ const Projects = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.intersectionRatio < 0.7) { // 70% visible = 30% scrolled past
-          restartAnimation(sectionRef.current);
+          restartAnimation(sectionElement);
         }
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (sectionElement) {
+      observer.observe(sectionElement);
     }
 
     // Cleanup function to remove event listener & observer
     return () => {
       window.removeEventListener("resize", checkScreenSize);
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (sectionElement) observer.unobserve(sectionElement);
     };
   }, []);
 

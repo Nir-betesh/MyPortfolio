@@ -9,6 +9,15 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const restartAnimation = (sectionId) => {
+    const blocks = document.querySelectorAll(`${sectionId} .appear-animation`);
+    blocks.forEach((block) => {
+      block.classList.remove('appear-animation'); 
+      void block.offsetWidth; 
+      block.classList.add('appear-animation'); 
+    });
+  };
   
   // Close menu when clicked outside the menu
   const handleClickOutside = (event) => {
@@ -28,7 +37,7 @@ const Navbar = () => {
     <nav className="transition-colors duration-500 ease-in-out transform -translate-y-7 fixed left-0 right-0 bg-gray-100 dark:bg-gray-900 text:black  dark:text-white text-3xl p-4 shadow-lg rounded-lg z-50">
       <div className="glow-text dark:dark-glow-text container flex mx-auto justify-between items-center">
         <h1 className="transform text-3xl font-bold">
-          <a href="#home">
+          <a href="#home" onClick={() => restartAnimation("#home")}>
             <AnimatedText text="My Portfolio"/>
           </a>
         </h1>
@@ -70,6 +79,7 @@ const Navbar = () => {
               <a
                 href={item.id}
                 className="hover:underline"
+                onClick={() => restartAnimation(item.id)}
               >
                 {item.name}
               </a>
@@ -96,6 +106,7 @@ const Navbar = () => {
                 href={item.id}
                 className="hover:underline"
                 onClick={() => {
+                  restartAnimation(item.id);
                   setIsOpen(false);
                 }}
               >

@@ -18,21 +18,22 @@ const Contact = () => {
 
   // Reststart animation when got in to the section
   useEffect(() => {
+    const sectionElement = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.intersectionRatio < 0.7) { // 70% visible means 30% scrolled past
-          restartAnimation(sectionRef.current);
+          restartAnimation(sectionElement);
         }
       }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (sectionElement) {
+      observer.observe(sectionElement);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (sectionElement) {
+        observer.unobserve(sectionElement);
       }
     };
   }, []);

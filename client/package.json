@@ -7,7 +7,7 @@
   "name": "my-portfolio",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "cors": "^2.8.5",
