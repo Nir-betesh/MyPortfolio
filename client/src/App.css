@@ -1,14 +1,24 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
-
-.Block {
+.appear-animation {
   animation: appear 1s linear;
+}
 
+.appear-left-animation {
+  animation: appear-left linear;
+  animation-timeline: view();
+  animation-range: 0% cover 30%;
+}
+
+.appear-right-animation {
+  animation: appear-right linear;
+  animation-timeline: view();
+  animation-range: 0% cover 30%;
 }
 
 @keyframes appear { 
-  0% {
+  from {
     opacity: 0.1;
     transform: scale(0.7);
   }
@@ -16,4 +26,26 @@
     opacity: 1;
     transform: scale(1);
   }
+}
+
+@keyframes appear-left { 
+  from {
+    opacity: 0.1;
+    transform: translatex(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+
+  @keyframes appear-right { 
+    from {
+      opacity: 0;
+      transform: translatex(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0px);
+    }
 }

@@ -9,15 +9,6 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  const restartAnimation = (sectionId) => {
-    const blocks = document.querySelectorAll(`${sectionId} .Block`);
-    blocks.forEach((block) => {
-      block.classList.remove('Block'); 
-      void block.offsetWidth; 
-      block.classList.add('Block'); 
-    });
-  };
   
   // Close menu when clicked outside the menu
   const handleClickOutside = (event) => {
@@ -79,7 +70,6 @@ const Navbar = () => {
               <a
                 href={item.id}
                 className="hover:underline"
-                onClick={() => restartAnimation(item.id)}
               >
                 {item.name}
               </a>
@@ -106,7 +96,6 @@ const Navbar = () => {
                 href={item.id}
                 className="hover:underline"
                 onClick={() => {
-                  restartAnimation(item.id);
                   setIsOpen(false);
                 }}
               >

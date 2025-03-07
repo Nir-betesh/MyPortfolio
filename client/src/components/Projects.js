@@ -1,8 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import AnimatedText from "./AnimatedText";
 
+const restartAnimation = (section) => {
+  const blocks = section.querySelectorAll('.appear-animation');
+  blocks.forEach((block) => {
+    block.classList.remove('appear-animation'); 
+    void block.offsetWidth; // Force reflow
+    block.classList.add('appear-animation'); 
+  });
+};
+
 const Projects = () => {
+  const sectionRef = useRef(null);
+
   const projects = [
     {
       title: "Space Shooter Game App",
@@ -48,13 +59,32 @@ const Projects = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Check screen size
     const checkScreenSize = () => {
       setIsMobile(window.innerWidth < 768); // Mobile if width < 768px
     };
 
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
+
+    // Intersection Observer for animation restart
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio < 0.7) { // 70% visible = 30% scrolled past
+          restartAnimation(sectionRef.current);
+        }
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    // Cleanup function to remove event listener & observer
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
+    };
   }, []);
 
   const PrevArrow = ({ onClick }) => (
@@ -92,15 +122,16 @@ const Projects = () => {
   return (
     <section
       id="projects"
+      ref={sectionRef}
       className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] text-black dark:text-white"
     >
-      <h2 className="Block text-6xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
+      <h2 className="appear-animation text-6xl font-bold mb-16 text-center glow-text dark:dark-glow-text animate-fade-in-down">
         <AnimatedText text="My Projects" />
       </h2>
 
       {/* Mobile View */}
       {isMobile ? (
-        <div className="Block flex p-4 flex-col w-full items-center gap-8">
+        <div className="appear-animation flex p-4 flex-col w-full items-center gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -128,7 +159,7 @@ const Projects = () => {
           ))}
         </div>
       ) : (
-        <div className="Block text-center grid grid-cols-1 gap-6">
+        <div className="appear-animation text-center grid grid-cols-1 gap-6">
           <Slider {...settings} className="flex-col">
             {projects.map((project, index) => (
               <div
