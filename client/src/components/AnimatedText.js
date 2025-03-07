@@ -47,12 +47,11 @@ const AnimatedText = ({ text }) => {
 
     >
       {text.split(' ').map((word, wordIndex) => (
-        <span key={wordIndex} className="word" style={{ display: 'inline-block', marginRight: '0.5em' }}>
+        <span key={wordIndex} className="word inline-block mr-3">
           {word.split('').map((char, letterIndex) => (
             <span 
               key={letterIndex} 
-              className="letter" 
-              style={{ display: 'inline-block' }}
+              className="letter inline-block"
             >
               {char}
             </span>

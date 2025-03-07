@@ -25,11 +25,11 @@ const ThemeToggle = () => {
           }`}
         >
           {isBrightMode ? (
-            <span className="flex items-center justify-center  text-yellow-500 text-sm font-bold">
+            <span className="flex items-center justify-center -translate-x-px translate-y-0.5 text-yellow-500 text-sm font-bold">
               ☀
             </span>
           ) : (
-            <span className="flex items-center justify-center text-blue-500 text-sm font-bold">
+            <span className="flex items-center justify-center translate-y-0.5 text-blue-500 text-sm font-bold">
               🌙
             </span>
           )}
@@ -39,5 +39,4 @@ const ThemeToggle = () => {
   );
 };
 
-export let isBrightMode; 
 export default ThemeToggle;

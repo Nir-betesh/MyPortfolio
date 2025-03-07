@@ -71,11 +71,11 @@ const CommentSection = () => {
 
   return (
     <section id="comments" className="transition-colors duration-500 ease-in-out scroll-mt-16 min-h-screen p-8 bg-gray-100 dark:bg-[#101016] dark:text-white">
-      <h2 className="Block text-center text-7xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
+      <h2 className="appear-right-animation text-center text-6xl font-extrabold mb-6 glow-text dark:dark-glow-text animate-fade-in-down">
       <AnimatedText text="Leave a Comment"/>
       </h2>
       <div className=" dark:bg-[#12102f] pb-1 pt-1 justify-center rounded-xl lg:w-1/3 mx-auto">
-        <form onSubmit={handleSubmit} className="Block pb-8 pt-8 grid grid-cols-1 gap-4 items-center justify-center">
+        <form onSubmit={handleSubmit} className="appear-right-animation pb-8 pt-8 grid grid-cols-1 gap-4 items-center justify-center">
           <input
             type="text"
             id="author"
@@ -83,7 +83,7 @@ const CommentSection = () => {
             placeholder="Your Name"
             autoComplete="name"
             onChange={(e) => setAuthor(e.target.value)}
-            className="Block p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-60 lg:w-5/6 mx-auto"
+            className="appear-right-animation p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-80 lg:w-5/6 mx-auto"
             required
           />
           <textarea
@@ -92,13 +92,13 @@ const CommentSection = () => {
             onChange={(e) => setContent(e.target.value)}
             placeholder="Your Comment"
             autoComplete="off"
-            className="Block p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-60 lg:w-5/6 mx-auto"
+            className="appear-right-animation p-2 dark:text-white bg-gray-200 dark:bg-[#151342] rounded-md w-80 lg:w-5/6 mx-auto"
             required
           />
           <div className="flex justify-center">
             <button
               type="submit"
-              className="Block w-40 h-12 bg-gray-300 dark:bg-[#36318c] dark:text-white font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110"
+              className="appear-right-animation w-40 h-12 bg-gray-300 dark:bg-[#36318c] dark:text-white font-bold px-4 py-2 rounded transition-transform duration-300 ease-in-out transform hover:scale-110"
             >
             
               Submit
@@ -107,14 +107,14 @@ const CommentSection = () => {
         </form>
       </div>
       {/* View Comments */}
-      <div className=" dark:bg-[#12102f] pb-8 pt-4 rounded-xl lg:w-1/3 mx-auto text-center mt-16 grid grid-cols-1 gap-4 items-center min-h-72">
-        <h3 className="text-7xl font-bold mb-4 glow-text dark:dark-glow-text">
+      <div className=" dark:bg-[#12102f] pb-8 pt-4 rounded-xl  appear-right-animation lg:w-1/3 mx-auto text-center mt-16 grid grid-cols-1 gap-4 items-center min-h-72">
+        <h3 className="text-6xl font-bold mb-4 glow-text dark:dark-glow-text">
           <AnimatedText text="Comments" />
         </h3>
         {currentComments.length > 0 ? currentComments.map((comment) => (
               <div
                 key={comment._id}
-                className="bg-white dark:bg-[#151342] Block gap-1 rounded-md w-60 lg:w-5/6 mx-auto"
+                className="bg-white dark:bg-[#151342] gap-1 rounded-md w-60 lg:w-5/6 mx-auto"
               >
                 <p className="text-xl">
                   <strong className="text-2xl">{comment.author}</strong>
@@ -131,7 +131,7 @@ const CommentSection = () => {
           (_, idx) => (
             <div
               key={`placeholder-${idx}`}
-              className="bg-gray-200 dark:bg-[#151342] Block gap-1 rounded-md  w-60 lg:w-5/6 mx-auto h-32"
+              className="bg-gray-200 dark:bg-[#151342] gap-1 rounded-md  w-60 lg:w-5/6 mx-auto h-32"
             ></div>
           )
         )}
