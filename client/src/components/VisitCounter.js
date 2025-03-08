@@ -4,7 +4,7 @@ function VisitCounter() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/visits`)
+    fetch(`${process.env.REACT_APP_API_URL}/api/visits`)
       .then((res) => res.json())
       .then((data) => setCount(data.count))
       .catch((err) => console.error("Error fetching visit count:", err));
