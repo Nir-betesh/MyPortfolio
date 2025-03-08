@@ -12,7 +12,7 @@ import './App.css';
 
 function App() {
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/visits`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/visits`, {
       method: "GET",
     })
       .catch((err) => console.error("Error tracking visit:", err));
